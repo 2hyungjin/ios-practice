@@ -30,6 +30,22 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.photoImage.image = UIImage(named: "\(name).jpg")
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetail", sender: indexPath.row)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail"{
+            if let destination = segue.destination as? DetailViewController{
+                if let index = sender as? Int{
+                    let name = bountyList[index]
+                    destination.name = name
+                    destination.bounty = bountyDict[name]
+                }
+            }
+        }
+    }
 
     
 }
