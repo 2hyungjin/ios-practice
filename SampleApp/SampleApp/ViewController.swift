@@ -8,15 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    let bountyList : [String] = ["luffy","brook","nami","zoro","sanji"]
-    let bountyDict : [String:Int] = ["luffy":30000,"brook":2000,"nami":1000,"zoro":20000,"sanji":15000]
+    let viewmodel:BountyViewModel = BountyViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bountyList.count
+        return viewmodel.numOfBountyInfo
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -24,10 +23,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             return UITableViewCell()
         }
         
-        let name = bountyList[indexPath.row]
-        cell.nameLabel.text = name
-        cell.bountyLabel.text = String(bountyDict[name]!)
-        cell.photoImage.image = UIImage(named: "\(name).jpg")
+        let bountiInfo:BountyInfo = viewmodel.bountyInfo(at: indexPath.row)
+        cell.nameLabel.text = bountiInfo.name
+        cell.bountyLabel.text = String(bountiInfo.bounty)
+        cell.photoImage.image = bountiInfo.image
         return cell
     }
     
@@ -39,9 +38,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         if segue.identifier == "showDetail"{
             if let destination = segue.destination as? DetailViewController{
                 if let index = sender as? Int{
-                    let name = bountyList[index]
-                    destination.name = name
-                    destination.bounty = bountyDict[name]
+                    destination.viewmodel.update(model: viewmodel.bountyInfo(at: index))
                 }
             }
         }

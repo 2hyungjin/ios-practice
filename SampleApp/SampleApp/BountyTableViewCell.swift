@@ -11,4 +11,10 @@ class BountyTableViewCell: UITableViewCell {
     @IBOutlet var photoImage: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var bountyLabel: UILabel!
+    
+    func update(_ bounty:BountyInfo){
+        photoImage.image=bounty.image
+        nameLabel.text=bounty.name
+        bountyLabel.text=String(bounty.bounty)
+    }
 }

@@ -12,24 +12,28 @@ class DetailViewController: UIViewController {
     @IBOutlet var bountyLabel: UILabel!
     @IBOutlet var photoImage: UIImageView!
     
-    var name:String?
-    var bounty:Int?
-    
+    let viewmodel = DetailViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
     }
     
     func updateUI(){
-        if let name = self.name, let bounty = self.bounty{
-            photoImage.image = UIImage(named: "\(name).jpg")
-            nameLabel.text = name
-            bountyLabel.text = String(bounty)
+        if let bountyInfo : BountyInfo = viewmodel.bountyInfo{
+            photoImage.image = bountyInfo.image
+            nameLabel.text = bountyInfo.name
+            bountyLabel.text = String(bountyInfo.bounty)
+
         }
-        
     }
     @IBAction func touchUpCloseButton(_ sender: UIButton){
         dismiss(animated: true, completion: nil)
     }
- 
+}
+class DetailViewModel{
+    var bountyInfo:BountyInfo?
+    
+    func update(model:BountyInfo){
+        bountyInfo=model
+    }
 }

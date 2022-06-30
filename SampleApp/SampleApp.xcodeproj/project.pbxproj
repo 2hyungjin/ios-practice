@@ -15,6 +15,8 @@
 		875631B6286BE6D20096DE09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 875631B4286BE6D20096DE09 /* LaunchScreen.storyboard */; };
 		875631BE286BEF0C0096DE09 /* BountyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875631BD286BEF0C0096DE09 /* BountyTableViewCell.swift */; };
 		875631C0286C12860096DE09 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875631BF286C12860096DE09 /* DetailViewController.swift */; };
+		875631C2286D55CF0096DE09 /* BountyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875631C1286D55CF0096DE09 /* BountyInfo.swift */; };
+		875631C4286D57B80096DE09 /* BountyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875631C3286D57B80096DE09 /* BountyViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		875631B7286BE6D20096DE09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		875631BD286BEF0C0096DE09 /* BountyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BountyTableViewCell.swift; sourceTree = "<group>"; };
 		875631BF286C12860096DE09 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		875631C1286D55CF0096DE09 /* BountyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BountyInfo.swift; sourceTree = "<group>"; };
+		875631C3286D57B80096DE09 /* BountyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BountyViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,11 +68,13 @@
 				875631A9286BE6CE0096DE09 /* AppDelegate.swift */,
 				875631AB286BE6CE0096DE09 /* SceneDelegate.swift */,
 				875631AD286BE6CE0096DE09 /* ViewController.swift */,
+				875631C1286D55CF0096DE09 /* BountyInfo.swift */,
 				875631AF286BE6CE0096DE09 /* Main.storyboard */,
 				875631BD286BEF0C0096DE09 /* BountyTableViewCell.swift */,
 				875631B2286BE6D20096DE09 /* Assets.xcassets */,
 				875631B4286BE6D20096DE09 /* LaunchScreen.storyboard */,
 				875631B7286BE6D20096DE09 /* Info.plist */,
+				875631C3286D57B80096DE09 /* BountyViewModel.swift */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -147,7 +153,9 @@
 				875631AE286BE6CE0096DE09 /* ViewController.swift in Sources */,
 				875631BE286BEF0C0096DE09 /* BountyTableViewCell.swift in Sources */,
 				875631C0286C12860096DE09 /* DetailViewController.swift in Sources */,
+				875631C4286D57B80096DE09 /* BountyViewModel.swift in Sources */,
 				875631AA286BE6CE0096DE09 /* AppDelegate.swift in Sources */,
+				875631C2286D55CF0096DE09 /* BountyInfo.swift in Sources */,
 				875631AC286BE6CE0096DE09 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
