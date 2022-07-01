@@ -147,10 +147,55 @@
             </objects>
             <point key="canvasLocation" x="1004" y="151"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="8cI-75-BXu">
+            <objects>
+                <viewController id="oAc-EO-d3T" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fCz-7p-02n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ii-YA-KXN">
+                                <rect key="frame" x="20" y="64" width="374" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnq-pd-Jg6">
+                                        <rect key="frame" x="8" y="8" width="358" height="184"/>
+                                        <mutableString key="text">LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="0zn-2d-SGR"/>
+                                    <constraint firstItem="mnq-pd-Jg6" firstAttribute="top" secondItem="6Ii-YA-KXN" secondAttribute="top" constant="8" id="6hV-al-7xd"/>
+                                    <constraint firstAttribute="trailing" secondItem="mnq-pd-Jg6" secondAttribute="trailing" constant="8" id="8Lb-Bx-LpC"/>
+                                    <constraint firstItem="mnq-pd-Jg6" firstAttribute="leading" secondItem="6Ii-YA-KXN" secondAttribute="leading" constant="8" id="s9U-40-sn4"/>
+                                    <constraint firstAttribute="bottom" secondItem="mnq-pd-Jg6" secondAttribute="bottom" constant="8" id="wSW-c9-chH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UXf-sy-5fx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Ii-YA-KXN" firstAttribute="top" secondItem="UXf-sy-5fx" secondAttribute="top" constant="20" id="Eus-tG-vMx"/>
+                            <constraint firstItem="UXf-sy-5fx" firstAttribute="trailing" secondItem="6Ii-YA-KXN" secondAttribute="trailing" constant="20" id="Lb8-cc-aQk"/>
+                            <constraint firstItem="6Ii-YA-KXN" firstAttribute="leading" secondItem="UXf-sy-5fx" secondAttribute="leading" constant="20" id="fj0-Za-Czu"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qlh-vS-i5W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="93" y="779"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

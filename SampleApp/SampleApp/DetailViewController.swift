@@ -30,6 +30,7 @@ class DetailViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 }
+
 class DetailViewModel{
     var bountyInfo:BountyInfo?
     
