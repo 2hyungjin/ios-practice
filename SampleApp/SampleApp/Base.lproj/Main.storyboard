@@ -142,7 +142,6 @@
                             <constraint firstItem="5iT-gJ-8Yb" firstAttribute="leading" secondItem="u4Q-aa-7AN" secondAttribute="leading" constant="70" id="Cm0-df-PD7"/>
                             <constraint firstItem="yXs-a2-oOB" firstAttribute="centerX" secondItem="XYi-S9-ckB" secondAttribute="centerX" id="FH0-ge-dsi"/>
                             <constraint firstItem="1Qd-Wh-z28" firstAttribute="centerX" secondItem="XYi-S9-ckB" secondAttribute="centerX" id="N3m-Rf-9mm"/>
-                            <constraint firstItem="1Qd-Wh-z28" firstAttribute="centerX" secondItem="XYi-S9-ckB" secondAttribute="centerX" id="hBR-tZ-1Uq"/>
                             <constraint firstItem="5iT-gJ-8Yb" firstAttribute="top" secondItem="u4Q-aa-7AN" secondAttribute="top" constant="100" id="ume-RV-k2Q"/>
                             <constraint firstItem="1Qd-Wh-z28" firstAttribute="top" secondItem="VBS-rf-SKf" secondAttribute="bottom" constant="20" id="zER-mo-yv6"/>
                             <constraint firstItem="VBS-rf-SKf" firstAttribute="top" secondItem="5iT-gJ-8Yb" secondAttribute="bottom" constant="40" id="zhc-gL-5ZL"/>
@@ -150,7 +149,9 @@
                     </view>
                     <connections>
                         <outlet property="bountyLabel" destination="1Qd-Wh-z28" id="1dR-On-Pam"/>
+                        <outlet property="bountyLabelCenterX" destination="N3m-Rf-9mm" id="Jy2-j3-9Rs"/>
                         <outlet property="nameLabel" destination="VBS-rf-SKf" id="dwO-Ek-PZ0"/>
+                        <outlet property="nameLabelCenterX" destination="zhc-gL-5ZL" id="1uk-AH-JAj"/>
                         <outlet property="photoImage" destination="5iT-gJ-8Yb" id="f5p-xj-t1s"/>
                     </connections>
                 </viewController>
