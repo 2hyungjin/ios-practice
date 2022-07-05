@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BountyTableViewCell: UITableViewCell {
+class BountyCollectionViewCell: UICollectionViewCell{
     @IBOutlet var photoImage: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var bountyLabel: UILabel!

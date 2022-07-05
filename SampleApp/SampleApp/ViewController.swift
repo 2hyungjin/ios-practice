@@ -25,27 +25,37 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController : UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showDetail", sender: indexPath.row)
+extension ViewController : UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetail", sender: indexPath.item)
     }
 }
 
-extension ViewController : UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension ViewController : UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewmodel.numOfBountyInfo
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? BountyTableViewCell else{
-            return UITableViewCell()
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? BountyCollectionViewCell else{
+            return UICollectionViewCell()
         }
         
-        let bountiInfo:BountyInfo = viewmodel.bountyInfo(at: indexPath.row)
-        cell.nameLabel.text = bountiInfo.name
-        cell.bountyLabel.text = String(bountiInfo.bounty)
-        cell.photoImage.image = bountiInfo.image
+        let bountyInfo:BountyInfo = viewmodel.bountyInfo(at: indexPath.row)
+        cell.update(bountyInfo)
         return cell
+    }
+}
+
+extension ViewController : UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let spacing: CGFloat = 10
+        let textAreaHeight: CGFloat = 65
+        
+        let width: CGFloat = (collectionView.bounds.width - spacing)/2
+        let height: CGFloat = width * 10/7 + textAreaHeight
+        
+        return CGSize(width: width, height: height)
     }
 }
 
