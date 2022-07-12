@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rgM-eE-Ru3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--HomeVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="NetworkApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3N-Bh-zds">
+                                <rect key="frame" x="172" y="557" width="70" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="cAb-bn-o71"/>
+                                    <constraint firstAttribute="height" constant="35" id="r3R-NN-ucr"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="검색">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onSearchButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1cG-rQ-3uK"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="u6e-rW-QtS">
+                                <rect key="frame" x="132" y="340" width="150" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="soS-Lc-bLe"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="사진"/>
+                                    <segment title="인물"/>
+                                </segments>
+                                <connections>
+                                    <action selector="searchFilterValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="rVo-Ab-7Pq"/>
+                                </connections>
+                            </segmentedControl>
+                            <searchBar contentMode="redraw" placeholder="사진 키워드" translatesAutoresizingMaskIntoConstraints="NO" id="h5W-1o-V6J">
+                                <rect key="frame" x="32" y="406" width="350" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="BD2-rV-fvA"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="3p8-CX-b7K">
+                                <rect key="frame" x="188.5" y="556" width="37" height="37"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="h5W-1o-V6J" firstAttribute="top" secondItem="u6e-rW-QtS" secondAttribute="bottom" constant="35" id="3ae-O6-beh"/>
+                            <constraint firstItem="o3N-Bh-zds" firstAttribute="top" secondItem="h5W-1o-V6J" secondAttribute="bottom" constant="100" id="4i8-qt-p1P"/>
+                            <constraint firstItem="3p8-CX-b7K" firstAttribute="centerX" secondItem="o3N-Bh-zds" secondAttribute="centerX" id="Kkv-G9-RR9"/>
+                            <constraint firstItem="o3N-Bh-zds" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MOf-Vx-REM"/>
+                            <constraint firstItem="h5W-1o-V6J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pau-fD-PAA"/>
+                            <constraint firstItem="u6e-rW-QtS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="iXE-iq-3Lc"/>
+                            <constraint firstItem="3p8-CX-b7K" firstAttribute="centerY" secondItem="o3N-Bh-zds" secondAttribute="centerY" id="jIJ-Uf-Mdc"/>
+                            <constraint firstItem="u6e-rW-QtS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="md5-hR-JZH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zAf-hD-uDH"/>
+                    <connections>
+                        <outlet property="indicator" destination="3p8-CX-b7K" id="hhE-nV-e0e"/>
+                        <outlet property="searchBar" destination="h5W-1o-V6J" id="zDG-uR-nMc"/>
+                        <outlet property="searchButton" destination="o3N-Bh-zds" id="cf8-Bo-rOm"/>
+                        <outlet property="searchFilterSegment" destination="u6e-rW-QtS" id="3LM-1T-e1p"/>
+                        <segue destination="jHW-Fk-Oas" kind="show" identifier="toUserListVC" id="rEf-pJ-zeJ"/>
+                        <segue destination="jnM-AL-G2B" kind="show" identifier="toPhotoCollectionVC" id="6Q8-OV-NX3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="130.58035714285714"/>
+        </scene>
+        <!--User ListVC-->
+        <scene sceneID="HMr-8e-P6g">
+            <objects>
+                <viewController id="jHW-Fk-Oas" customClass="UserListVC" customModule="NetworkApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dbg-b7-KOL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="9GJ-Ch-wmE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zNB-qW-1Cy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2jx-cm-pJf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1948" y="-250"/>
+        </scene>
+        <!--Photo CollectionVC-->
+        <scene sceneID="J4z-PB-9xA">
+            <objects>
+                <viewController id="jnM-AL-G2B" customClass="PhotoCollectionVC" customModule="NetworkApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Uw-sQ-C7I">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="VTu-Cz-VOP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cZU-96-MtR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oow-w4-21g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1948" y="556"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DDf-D5-52G">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rgM-eE-Ru3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ptV-H4-S7I">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TF7-ev-8AB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hUP-rD-THI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
