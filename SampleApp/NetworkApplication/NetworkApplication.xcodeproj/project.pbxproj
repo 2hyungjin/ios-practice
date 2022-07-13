@@ -41,6 +41,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		878A7C77287E946800778AF7 /* viewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				87BEECA1287D0AAA001226A4 /* HomeVC.swift */,
+				87BEECB1287D0DE6001226A4 /* UserListVC.swift */,
+				87BEECB3287D0E12001226A4 /* PhotoCollectionVC.swift */,
+			);
+			path = viewcontroller;
+			sourceTree = "<group>";
+		};
 		87BEEC91287D0AAA001226A4 = {
 			isa = PBXGroup;
 			children = (
@@ -60,12 +70,10 @@
 		87BEEC9C287D0AAA001226A4 /* NetworkApplication */ = {
 			isa = PBXGroup;
 			children = (
+				878A7C77287E946800778AF7 /* viewcontroller */,
 				87BEEC9D287D0AAA001226A4 /* AppDelegate.swift */,
 				87BEEC9F287D0AAA001226A4 /* SceneDelegate.swift */,
-				87BEECA1287D0AAA001226A4 /* HomeVC.swift */,
 				87BEECA3287D0AAA001226A4 /* Main.storyboard */,
-				87BEECB1287D0DE6001226A4 /* UserListVC.swift */,
-				87BEECB3287D0E12001226A4 /* PhotoCollectionVC.swift */,
 				87BEECA6287D0AAD001226A4 /* Assets.xcassets */,
 				87BEECA8287D0AAD001226A4 /* LaunchScreen.storyboard */,
 				87BEECAB287D0AAD001226A4 /* Info.plist */,

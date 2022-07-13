@@ -14,14 +14,20 @@ class HomeVC: UIViewController {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchFilterSegment: UISegmentedControl!
     
+    var keyboardDismissTapGesture : UITapGestureRecognizer = UITapGestureRecognizer(target: nil, action: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.searchButton.layer.cornerRadius = 10
         self.searchBar.searchBarStyle = .minimal
+        self.searchBar.delegate = self
+        
+        self.keyboardDismissTapGesture.delegate = self
+        self.view.addGestureRecognizer(keyboardDismissTapGesture)
         
     }
     
-    @IBAction func onSearchButtonClicked(_ sender: UIButton) {
+    func navigate(){
         switch searchFilterSegment.selectedSegmentIndex{
         case 0:
             self.performSegue(withIdentifier: "toPhotoCollectionVC", sender: nil)
@@ -29,6 +35,12 @@ class HomeVC: UIViewController {
             self.performSegue(withIdentifier: "toUserListVC", sender: nil)
         default:
             self.performSegue(withIdentifier: "toPhotoCollectionVC", sender: nil)
+        }
+    }
+    
+    @IBAction func onSearchButtonClicked(_ sender: UIButton) {
+        if searchBar.text?.count ?? 0 > 0{
+            navigate()
         }
     }
     
@@ -44,7 +56,18 @@ class HomeVC: UIViewController {
         
         self.searchBar.becomeFirstResponder()
     }
-    
+}
 
+extension HomeVC : UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.searchButton.isHidden = searchText.isEmpty
+    }
+}
+
+extension HomeVC : UIGestureRecognizerDelegate{
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        //뷰가 터치 됐을 때
+        return true
+    }
 }
 
